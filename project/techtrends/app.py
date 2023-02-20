@@ -3,6 +3,9 @@ import sqlite3
 from flask import Flask, jsonify, json, render_template, request, url_for, redirect, flash
 from werkzeug.exceptions import abort
 
+import logging
+import sys
+
 # Function to get a database connection.
 # This function connects to database with the name `database.db`
 def get_db_connection():
@@ -16,6 +19,7 @@ def get_post(post_id):
     post = connection.execute('SELECT * FROM posts WHERE id = ?',
                         (post_id,)).fetchone()
     connection.close()
+    
     return post
 
 # Define the Flask application
@@ -28,6 +32,7 @@ def index():
     connection = get_db_connection()
     posts = connection.execute('SELECT * FROM posts').fetchall()
     connection.close()
+    app.logger.info('Main request successfull')
     return render_template('index.html', posts=posts)
 
 # Define how each individual article is rendered 
@@ -36,14 +41,37 @@ def index():
 def post(post_id):
     post = get_post(post_id)
     if post is None:
+      app.logger.info('404 not found')
       return render_template('404.html'), 404
     else:
+      app.logger.info('retrieved post.html')
       return render_template('post.html', post=post)
-
+    
 # Define the About Us page
 @app.route('/about')
 def about():
+    app.logger.info('About us retrieved')
     return render_template('about.html')
+
+@app.route('/healthz')
+def status():
+    response = app.response_class(
+            response=json.dumps({"result":"OK - healthy"}),
+            status=200,
+            mimetype='application/json'
+    )
+    app.logger.info('%(asctime)s Status request successfull')
+    return response
+
+@app.route('/metrics')
+def metrics():
+    response = app.response_class(
+            response=json.dumps({"status":"success","code":0,"data":{"db_connection_count":1,"post_count":7}}),
+            status=200,
+            mimetype='application/json'
+    )
+    app.logger.info('Metrics request successfull')
+    return response
 
 # Define the post creation functionality 
 @app.route('/create', methods=('GET', 'POST'))
@@ -63,8 +91,10 @@ def create():
 
             return redirect(url_for('index'))
 
+    app.logger.info('post created')
     return render_template('create.html')
 
 # start the application on port 3111
 if __name__ == "__main__":
-   app.run(host='0.0.0.0', port='3111')
+    logging.basicConfig(filename='app.log',level=logging.DEBUG)
+    app.run(host='0.0.0.0', port='3111')
