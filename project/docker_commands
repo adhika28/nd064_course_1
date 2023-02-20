@@ -6,6 +6,6 @@ docker build -f Dockerfile -t techtrends2 .
 docker run -d -p 7111:3111 techtrends2
 ## Docker commands used to get the application logs
 # TODO: insert the docker logs command
-
+docker logs 8ec129d67262
 ## Logs from the container running the TechTrends application
 # TODO: paste logs from the Docker container 
