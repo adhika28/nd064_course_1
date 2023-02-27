@@ -16,3 +16,4 @@ INFO:app:%(asctime)s Status request successfull
 INFO:werkzeug:127.0.0.1 - - [27/Feb/2023 06:16:11] "GET /healthz HTTP/1.1" 200 -
 INFO:app:Metrics request successfull
 INFO:werkzeug:127.0.0.1 - - [27/Feb/2023 06:16:16] "GET /metrics HTTP/1.1" 200 -
+h
