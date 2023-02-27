@@ -6,6 +6,13 @@ docker build -f Dockerfile -t techtrends2 .
 docker run -d -p 7111:3111 techtrends2
 ## Docker commands used to get the application logs
 # TODO: insert the docker logs command
-docker logs 8ec129d67262
+docker logs 8ec129d67262 -f
 ## Logs from the container running the TechTrends application
 # TODO: paste logs from the Docker container 
+INFO:app:Main request successfull
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2023 06:16:04] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2023 06:16:05] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+INFO:app:%(asctime)s Status request successfull
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2023 06:16:11] "GET /healthz HTTP/1.1" 200 -
+INFO:app:Metrics request successfull
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2023 06:16:16] "GET /metrics HTTP/1.1" 200 -
