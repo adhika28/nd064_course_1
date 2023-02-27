@@ -33,4 +33,4 @@ jobs:
           file: ./project/techtrends/Dockerfile
           plattforms: linux/amd64
           push: true
-          
+          tags: adhika28/techtrends:latest
