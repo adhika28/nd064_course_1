@@ -3,12 +3,7 @@ INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a
  * Running on http://127.0.0.1:3111
  * Running on http://192.168.1.17:3111
 INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:app:Metrics request successfull
-INFO:werkzeug:127.0.0.1 - - [20/Feb/2023 08:49:44] "GET /metrics HTTP/1.1" 200 -
-INFO:app:Main request successfull
-INFO:werkzeug:127.0.0.1 - - [20/Feb/2023 08:49:47] "GET / HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [20/Feb/2023 08:49:47] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
-ERROR:app:Exception on /1 [GET]
+ERROR:app:Exception on / [GET]
 Traceback (most recent call last):
   File "C:\Users\Windows 10\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.7_qbz5n2kfra8p0\LocalCache\local-packages\Python37\site-packages\flask\app.py", line 2528, in wsgi_app
     response = self.full_dispatch_request()
@@ -18,13 +13,11 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "C:\Users\Windows 10\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.7_qbz5n2kfra8p0\LocalCache\local-packages\Python37\site-packages\flask\app.py", line 1799, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-  File "app.py", line 46, in post
-    app.logger.info('retrieved post.html',post=post)
-  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.7_3.7.2544.0_x64__qbz5n2kfra8p0\lib\logging\__init__.py", line 1378, in info
-    self._log(INFO, msg, args, **kwargs)
-TypeError: _log() got an unexpected keyword argument 'post'
-INFO:werkzeug:127.0.0.1 - - [20/Feb/2023 08:49:49] "[35m[1mGET /1 HTTP/1.1[0m" 500 -
-ERROR:app:Exception on /2 [GET]
+  File "d:/Udacity/nd064_course_1/project/techtrends/app.py", line 33, in index
+    posts = connection.execute('SELECT * FROM posts').fetchall()
+sqlite3.OperationalError: no such table: posts
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2023 06:12:11] "[35m[1mGET / HTTP/1.1[0m" 500 -
+ERROR:app:Exception on / [GET]
 Traceback (most recent call last):
   File "C:\Users\Windows 10\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.7_qbz5n2kfra8p0\LocalCache\local-packages\Python37\site-packages\flask\app.py", line 2528, in wsgi_app
     response = self.full_dispatch_request()
@@ -34,13 +27,11 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "C:\Users\Windows 10\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.7_qbz5n2kfra8p0\LocalCache\local-packages\Python37\site-packages\flask\app.py", line 1799, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-  File "app.py", line 46, in post
-    app.logger.info('retrieved post.html',post=post)
-  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.7_3.7.2544.0_x64__qbz5n2kfra8p0\lib\logging\__init__.py", line 1378, in info
-    self._log(INFO, msg, args, **kwargs)
-TypeError: _log() got an unexpected keyword argument 'post'
-INFO:werkzeug:127.0.0.1 - - [20/Feb/2023 08:49:52] "[35m[1mGET /2 HTTP/1.1[0m" 500 -
-ERROR:app:Exception on /3 [GET]
+  File "d:/Udacity/nd064_course_1/project/techtrends/app.py", line 33, in index
+    posts = connection.execute('SELECT * FROM posts').fetchall()
+sqlite3.OperationalError: no such table: posts
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2023 06:12:12] "[35m[1mGET / HTTP/1.1[0m" 500 -
+ERROR:app:Exception on / [GET]
 Traceback (most recent call last):
   File "C:\Users\Windows 10\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.7_qbz5n2kfra8p0\LocalCache\local-packages\Python37\site-packages\flask\app.py", line 2528, in wsgi_app
     response = self.full_dispatch_request()
@@ -50,30 +41,11 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "C:\Users\Windows 10\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.7_qbz5n2kfra8p0\LocalCache\local-packages\Python37\site-packages\flask\app.py", line 1799, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-  File "app.py", line 46, in post
-    app.logger.info('retrieved post.html',post=post)
-  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.7_3.7.2544.0_x64__qbz5n2kfra8p0\lib\logging\__init__.py", line 1378, in info
-    self._log(INFO, msg, args, **kwargs)
-TypeError: _log() got an unexpected keyword argument 'post'
-INFO:werkzeug:127.0.0.1 - - [20/Feb/2023 08:49:56] "[35m[1mGET /3 HTTP/1.1[0m" 500 -
-INFO:app:Status request successfull
-INFO:werkzeug:127.0.0.1 - - [20/Feb/2023 08:50:03] "GET /healthz HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [20/Feb/2023 08:50:11] "[33mGET /notfound HTTP/1.1[0m" 404 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on all addresses (0.0.0.0)
- * Running on http://127.0.0.1:3111
- * Running on http://192.168.1.17:3111
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:app:Main request successfull
-INFO:werkzeug:127.0.0.1 - - [20/Feb/2023 09:28:27] "GET / HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [20/Feb/2023 09:28:27] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [20/Feb/2023 09:28:30] "GET /create HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [20/Feb/2023 09:28:30] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [20/Feb/2023 09:28:43] "[32mPOST /create HTTP/1.1[0m" 302 -
-INFO:app:Main request successfull
-INFO:werkzeug:127.0.0.1 - - [20/Feb/2023 09:28:43] "GET / HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [20/Feb/2023 09:28:43] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
-ERROR:app:Exception on /7 [GET]
+  File "d:/Udacity/nd064_course_1/project/techtrends/app.py", line 33, in index
+    posts = connection.execute('SELECT * FROM posts').fetchall()
+sqlite3.OperationalError: no such table: posts
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2023 06:12:13] "[35m[1mGET / HTTP/1.1[0m" 500 -
+ERROR:app:Exception on / [GET]
 Traceback (most recent call last):
   File "C:\Users\Windows 10\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.7_qbz5n2kfra8p0\LocalCache\local-packages\Python37\site-packages\flask\app.py", line 2528, in wsgi_app
     response = self.full_dispatch_request()
@@ -83,13 +55,11 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "C:\Users\Windows 10\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.7_qbz5n2kfra8p0\LocalCache\local-packages\Python37\site-packages\flask\app.py", line 1799, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-  File "app.py", line 46, in post
-    app.logger.info('retrieved post.html',post=post)
-  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.7_3.7.2544.0_x64__qbz5n2kfra8p0\lib\logging\__init__.py", line 1378, in info
-    self._log(INFO, msg, args, **kwargs)
-TypeError: _log() got an unexpected keyword argument 'post'
-INFO:werkzeug:127.0.0.1 - - [20/Feb/2023 09:28:47] "[35m[1mGET /7 HTTP/1.1[0m" 500 -
-ERROR:app:Exception on /1 [GET]
+  File "d:/Udacity/nd064_course_1/project/techtrends/app.py", line 33, in index
+    posts = connection.execute('SELECT * FROM posts').fetchall()
+sqlite3.OperationalError: no such table: posts
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2023 06:12:13] "[35m[1mGET / HTTP/1.1[0m" 500 -
+ERROR:app:Exception on / [GET]
 Traceback (most recent call last):
   File "C:\Users\Windows 10\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.7_qbz5n2kfra8p0\LocalCache\local-packages\Python37\site-packages\flask\app.py", line 2528, in wsgi_app
     response = self.full_dispatch_request()
@@ -99,34 +69,11 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "C:\Users\Windows 10\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.7_qbz5n2kfra8p0\LocalCache\local-packages\Python37\site-packages\flask\app.py", line 1799, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-  File "app.py", line 46, in post
-    app.logger.info('retrieved post.html',post=post)
-  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.7_3.7.2544.0_x64__qbz5n2kfra8p0\lib\logging\__init__.py", line 1378, in info
-    self._log(INFO, msg, args, **kwargs)
-TypeError: _log() got an unexpected keyword argument 'post'
-INFO:werkzeug:127.0.0.1 - - [20/Feb/2023 09:28:53] "[35m[1mGET /1 HTTP/1.1[0m" 500 -
-INFO:app:About us retrieved
-INFO:werkzeug:127.0.0.1 - - [20/Feb/2023 09:28:57] "GET /about HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [20/Feb/2023 09:28:57] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
-INFO:app:Status request successfull
-INFO:werkzeug:127.0.0.1 - - [20/Feb/2023 09:29:07] "GET /healthz HTTP/1.1" 200 -
-INFO:app:Metrics request successfull
-INFO:werkzeug:127.0.0.1 - - [20/Feb/2023 09:29:14] "GET /metrics HTTP/1.1" 200 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on all addresses (0.0.0.0)
- * Running on http://127.0.0.1:3111
- * Running on http://192.168.1.17:3111
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:app:Main request successfull
-INFO:werkzeug:127.0.0.1 - - [20/Feb/2023 09:54:12] "GET / HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [20/Feb/2023 09:54:12] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
-INFO:app:retrieved post.html
-INFO:werkzeug:127.0.0.1 - - [20/Feb/2023 09:54:15] "GET /7 HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [20/Feb/2023 09:54:15] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
-INFO:app:About us retrieved
-INFO:werkzeug:127.0.0.1 - - [20/Feb/2023 09:54:20] "GET /about HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [20/Feb/2023 09:54:20] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
-ERROR:app:Exception on /create [GET]
+  File "d:/Udacity/nd064_course_1/project/techtrends/app.py", line 33, in index
+    posts = connection.execute('SELECT * FROM posts').fetchall()
+sqlite3.OperationalError: no such table: posts
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2023 06:12:13] "[35m[1mGET / HTTP/1.1[0m" 500 -
+ERROR:app:Exception on / [GET]
 Traceback (most recent call last):
   File "C:\Users\Windows 10\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.7_qbz5n2kfra8p0\LocalCache\local-packages\Python37\site-packages\flask\app.py", line 2528, in wsgi_app
     response = self.full_dispatch_request()
@@ -136,11 +83,11 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "C:\Users\Windows 10\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.7_qbz5n2kfra8p0\LocalCache\local-packages\Python37\site-packages\flask\app.py", line 1799, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-  File "app.py", line 93, in create
-    app.logger.info(title + 'created')
-UnboundLocalError: local variable 'title' referenced before assignment
-INFO:werkzeug:127.0.0.1 - - [20/Feb/2023 09:54:24] "[35m[1mGET /create HTTP/1.1[0m" 500 -
-ERROR:app:Exception on /create [GET]
+  File "d:/Udacity/nd064_course_1/project/techtrends/app.py", line 33, in index
+    posts = connection.execute('SELECT * FROM posts').fetchall()
+sqlite3.OperationalError: no such table: posts
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2023 06:12:13] "[35m[1mGET / HTTP/1.1[0m" 500 -
+ERROR:app:Exception on / [GET]
 Traceback (most recent call last):
   File "C:\Users\Windows 10\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.7_qbz5n2kfra8p0\LocalCache\local-packages\Python37\site-packages\flask\app.py", line 2528, in wsgi_app
     response = self.full_dispatch_request()
@@ -150,11 +97,11 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "C:\Users\Windows 10\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.7_qbz5n2kfra8p0\LocalCache\local-packages\Python37\site-packages\flask\app.py", line 1799, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-  File "app.py", line 93, in create
-    app.logger.info(title + 'created')
-UnboundLocalError: local variable 'title' referenced before assignment
-INFO:werkzeug:127.0.0.1 - - [20/Feb/2023 09:54:32] "[35m[1mGET /create HTTP/1.1[0m" 500 -
-ERROR:app:Exception on /create [GET]
+  File "d:/Udacity/nd064_course_1/project/techtrends/app.py", line 33, in index
+    posts = connection.execute('SELECT * FROM posts').fetchall()
+sqlite3.OperationalError: no such table: posts
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2023 06:12:14] "[35m[1mGET / HTTP/1.1[0m" 500 -
+ERROR:app:Exception on / [GET]
 Traceback (most recent call last):
   File "C:\Users\Windows 10\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.7_qbz5n2kfra8p0\LocalCache\local-packages\Python37\site-packages\flask\app.py", line 2528, in wsgi_app
     response = self.full_dispatch_request()
@@ -164,11 +111,11 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "C:\Users\Windows 10\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.7_qbz5n2kfra8p0\LocalCache\local-packages\Python37\site-packages\flask\app.py", line 1799, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-  File "app.py", line 93, in create
-    app.logger.info(title + 'created')
-UnboundLocalError: local variable 'title' referenced before assignment
-INFO:werkzeug:127.0.0.1 - - [20/Feb/2023 09:54:34] "[35m[1mGET /create HTTP/1.1[0m" 500 -
-ERROR:app:Exception on /create [GET]
+  File "d:/Udacity/nd064_course_1/project/techtrends/app.py", line 33, in index
+    posts = connection.execute('SELECT * FROM posts').fetchall()
+sqlite3.OperationalError: no such table: posts
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2023 06:12:14] "[35m[1mGET / HTTP/1.1[0m" 500 -
+ERROR:app:Exception on / [GET]
 Traceback (most recent call last):
   File "C:\Users\Windows 10\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.7_qbz5n2kfra8p0\LocalCache\local-packages\Python37\site-packages\flask\app.py", line 2528, in wsgi_app
     response = self.full_dispatch_request()
@@ -178,11 +125,11 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "C:\Users\Windows 10\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.7_qbz5n2kfra8p0\LocalCache\local-packages\Python37\site-packages\flask\app.py", line 1799, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-  File "app.py", line 93, in create
-    app.logger.info(title + 'created')
-UnboundLocalError: local variable 'title' referenced before assignment
-INFO:werkzeug:127.0.0.1 - - [20/Feb/2023 09:54:35] "[35m[1mGET /create HTTP/1.1[0m" 500 -
-ERROR:app:Exception on /create [GET]
+  File "d:/Udacity/nd064_course_1/project/techtrends/app.py", line 33, in index
+    posts = connection.execute('SELECT * FROM posts').fetchall()
+sqlite3.OperationalError: no such table: posts
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2023 06:12:14] "[35m[1mGET / HTTP/1.1[0m" 500 -
+ERROR:app:Exception on / [GET]
 Traceback (most recent call last):
   File "C:\Users\Windows 10\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.7_qbz5n2kfra8p0\LocalCache\local-packages\Python37\site-packages\flask\app.py", line 2528, in wsgi_app
     response = self.full_dispatch_request()
@@ -192,17 +139,11 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "C:\Users\Windows 10\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.7_qbz5n2kfra8p0\LocalCache\local-packages\Python37\site-packages\flask\app.py", line 1799, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-  File "app.py", line 93, in create
-    app.logger.info(title + 'created')
-UnboundLocalError: local variable 'title' referenced before assignment
-INFO:werkzeug:127.0.0.1 - - [20/Feb/2023 09:54:36] "[35m[1mGET /create HTTP/1.1[0m" 500 -
-INFO:app:retrieved post.html
-INFO:werkzeug:127.0.0.1 - - [20/Feb/2023 09:54:38] "GET /1 HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [20/Feb/2023 09:54:38] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
-INFO:app:retrieved post.html
-INFO:werkzeug:127.0.0.1 - - [20/Feb/2023 09:54:42] "GET /2 HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [20/Feb/2023 09:54:42] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
-ERROR:app:Exception on /create [GET]
+  File "d:/Udacity/nd064_course_1/project/techtrends/app.py", line 33, in index
+    posts = connection.execute('SELECT * FROM posts').fetchall()
+sqlite3.OperationalError: no such table: posts
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2023 06:12:14] "[35m[1mGET / HTTP/1.1[0m" 500 -
+ERROR:app:Exception on / [GET]
 Traceback (most recent call last):
   File "C:\Users\Windows 10\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.7_qbz5n2kfra8p0\LocalCache\local-packages\Python37\site-packages\flask\app.py", line 2528, in wsgi_app
     response = self.full_dispatch_request()
@@ -212,68 +153,35 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "C:\Users\Windows 10\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.7_qbz5n2kfra8p0\LocalCache\local-packages\Python37\site-packages\flask\app.py", line 1799, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-  File "app.py", line 93, in create
-    app.logger.info(title + 'created')
-UnboundLocalError: local variable 'title' referenced before assignment
-INFO:werkzeug:127.0.0.1 - - [20/Feb/2023 09:54:46] "[35m[1mGET /create HTTP/1.1[0m" 500 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on all addresses (0.0.0.0)
- * Running on http://127.0.0.1:3111
- * Running on http://192.168.1.17:3111
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:app:retrieved post.html
-INFO:werkzeug:127.0.0.1 - - [20/Feb/2023 09:56:09] "GET /1 HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [20/Feb/2023 09:56:10] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
-INFO:app:post created
-INFO:werkzeug:127.0.0.1 - - [20/Feb/2023 09:56:12] "GET /create HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [20/Feb/2023 09:56:12] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [20/Feb/2023 09:56:40] "[32mPOST /create HTTP/1.1[0m" 302 -
-INFO:app:Main request successfull
-INFO:werkzeug:127.0.0.1 - - [20/Feb/2023 09:56:40] "GET / HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [20/Feb/2023 09:56:40] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
-INFO:app:retrieved post.html
-INFO:werkzeug:127.0.0.1 - - [20/Feb/2023 09:56:42] "GET /8 HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [20/Feb/2023 09:56:43] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on all addresses (0.0.0.0)
- * Running on http://127.0.0.1:3111
- * Running on http://192.168.1.17:3111
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:app:About us retrieved
-INFO:werkzeug:127.0.0.1 - - [20/Feb/2023 10:00:17] "GET /about HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [20/Feb/2023 10:00:17] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
-INFO:app:Status request successfull
-INFO:werkzeug:127.0.0.1 - - [20/Feb/2023 10:00:26] "GET /healthz HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [20/Feb/2023 10:00:45] "[33mGET /hgh HTTP/1.1[0m" 404 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on all addresses (0.0.0.0)
- * Running on http://127.0.0.1:3111
- * Running on http://192.168.1.17:3111
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [20/Feb/2023 10:15:44] "[33mGET /hgh HTTP/1.1[0m" 404 -
-INFO:app:Main request successfull
-INFO:werkzeug:127.0.0.1 - - [20/Feb/2023 10:15:49] "GET / HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [20/Feb/2023 10:15:49] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
-INFO:app:%(asctime)s Status request successfull
-INFO:werkzeug:127.0.0.1 - - [20/Feb/2023 10:15:57] "GET /healthz HTTP/1.1" 200 -
-INFO:app:retrieved post.html
-INFO:werkzeug:127.0.0.1 - - [20/Feb/2023 11:50:41] "GET /2 HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [20/Feb/2023 11:50:41] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
-INFO:app:retrieved post.html
-INFO:werkzeug:127.0.0.1 - - [20/Feb/2023 11:50:44] "GET /7 HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [20/Feb/2023 11:50:44] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
-INFO:app:retrieved post.html
-INFO:werkzeug:127.0.0.1 - - [20/Feb/2023 11:50:48] "GET /8 HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [20/Feb/2023 11:50:48] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on all addresses (0.0.0.0)
- * Running on http://127.0.0.1:3111
- * Running on http://192.168.1.17:3111
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:app:Main request successfull
-INFO:werkzeug:127.0.0.1 - - [27/Feb/2023 06:16:04] "GET / HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [27/Feb/2023 06:16:05] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
-INFO:app:%(asctime)s Status request successfull
-INFO:werkzeug:127.0.0.1 - - [27/Feb/2023 06:16:11] "GET /healthz HTTP/1.1" 200 -
-INFO:app:Metrics request successfull
-INFO:werkzeug:127.0.0.1 - - [27/Feb/2023 06:16:16] "GET /metrics HTTP/1.1" 200 -
+  File "d:/Udacity/nd064_course_1/project/techtrends/app.py", line 33, in index
+    posts = connection.execute('SELECT * FROM posts').fetchall()
+sqlite3.OperationalError: no such table: posts
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2023 06:12:15] "[35m[1mGET / HTTP/1.1[0m" 500 -
+ERROR:app:Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\Windows 10\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.7_qbz5n2kfra8p0\LocalCache\local-packages\Python37\site-packages\flask\app.py", line 2528, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Windows 10\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.7_qbz5n2kfra8p0\LocalCache\local-packages\Python37\site-packages\flask\app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Windows 10\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.7_qbz5n2kfra8p0\LocalCache\local-packages\Python37\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Windows 10\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.7_qbz5n2kfra8p0\LocalCache\local-packages\Python37\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "d:/Udacity/nd064_course_1/project/techtrends/app.py", line 33, in index
+    posts = connection.execute('SELECT * FROM posts').fetchall()
+sqlite3.OperationalError: no such table: posts
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2023 06:12:15] "[35m[1mGET / HTTP/1.1[0m" 500 -
+ERROR:app:Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\Windows 10\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.7_qbz5n2kfra8p0\LocalCache\local-packages\Python37\site-packages\flask\app.py", line 2528, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Windows 10\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.7_qbz5n2kfra8p0\LocalCache\local-packages\Python37\site-packages\flask\app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Windows 10\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.7_qbz5n2kfra8p0\LocalCache\local-packages\Python37\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Windows 10\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.7_qbz5n2kfra8p0\LocalCache\local-packages\Python37\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "d:/Udacity/nd064_course_1/project/techtrends/app.py", line 33, in index
+    posts = connection.execute('SELECT * FROM posts').fetchall()
+sqlite3.OperationalError: no such table: posts
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2023 06:12:15] "[35m[1mGET / HTTP/1.1[0m" 500 -
